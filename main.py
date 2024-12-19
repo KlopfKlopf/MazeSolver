@@ -1,8 +1,14 @@
-from window import Window, Line, Point
+from window import Window
+from cell import Cell
+
 win = Window(800, 600)
 
-line1 = Line(Point(0, 0), Point(800, 600))
-line2 = Line(Point(500, 100), Point(100, 500))
-win.draw_line(line1, "red")
-win.draw_line(line2, "blue")
+# cell = Cell(100, 300, 500, 600, win, has_right_wall=False)
+# cell.draw()
+
+# cell = Cell(150, 200, 225, 300, win, has_top_wall=False)
+# cell.draw()
+
+cell = Cell(250, 200, 350, 300, win, has_left_wall= False)
+cell.draw()
 win.wait_for_close()
