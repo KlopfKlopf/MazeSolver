@@ -7,14 +7,16 @@ class Cell:
         self.has_right_wall = has_right_wall
         self.has_top_wall = has_top_wall
         self.has_bottom_wall = has_bottom_wall
+        self.visited = False
         self._x1 = None
         self._x2 = None
         self._y1 = None
         self._y2 = None
         self._win = win
+        
 
     def draw(self, x1, y1 , x2, y2,):
-        if not self._win:
+        if self._win is None:
           return
         self._x1 = x1
         self._y1 = y1
@@ -47,8 +49,6 @@ class Cell:
           self._win.draw_line(line, "white")
     
     def draw_move(self, to_cell, undo=False):
-      if not self._win:
-         return
       center_x = self._x1 + ((self._x2 - self._x1) / 2)
       center_y = self._y1 + ((self._y2 - self._y1) / 2)
 
